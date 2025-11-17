@@ -14,7 +14,7 @@ public class Recurring
     }
 
     [Function("Recurring")]
-    public void Run([TimerTrigger("* * * * * *")] TimerInfo myTimer)
+    public void Run([TimerTrigger("* */5 * * * *")] TimerInfo myTimer)
     {
         _logger.LogInformation("C# Timer trigger function executed at: {executionTime}", DateTime.Now);
         
