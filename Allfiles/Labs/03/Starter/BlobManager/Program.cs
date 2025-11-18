@@ -5,7 +5,7 @@ using Azure.Storage.Blobs;
 
 var blobServiceEndpoint = "https://mediastorekarim.blob.core.windows.net/";
 var storageAccountName = "mediastorekarim";
-var storageAccountKey = "<KEY>";
+var storageAccountKey = "<Key>";
 
 var accountCredentials = new StorageSharedKeyCredential(storageAccountName, 
                             storageAccountKey);
