@@ -11,12 +11,12 @@
 
     public class Program
     {
-        private const string EndpointUrl = "";
-        private const string AuthorizationKey = "";
+        private const string EndpointUrl = "https://polycosmoskarim.documents.azure.com:443/";//Cosmos Uri
+        private const string AuthorizationKey = "";//PRIMARY KEY
         private const string DatabaseName = "Retail";
         private const string ContainerName = "Online";
-        private const string PartitionKey = "";
-        private const string JsonFilePath = "";
+        private const string PartitionKey = "/Category";
+        private const string JsonFilePath = "models.json";
 
         static private int amountToInsert;
         static List<Model> models;
@@ -35,7 +35,7 @@
 
                 // Configure indexing policy to exclude all attributes to maximize RU/s usage
                 Console.WriteLine($"Creating a container if not already exists...");
-                await database.DefineContainer(Program.ContainerName, PartitionKey)
+                await database.DefineContainer(ContainerName, PartitionKey)
                         .WithIndexingPolicy()
                             .WithIndexingMode(IndexingMode.Consistent)
                             .WithIncludedPaths()
